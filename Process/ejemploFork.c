@@ -13,11 +13,11 @@
 	 // - El proceso padre: El programa original que llamó a fork()
 	 // - El proceso hijo: Una copia del padre que se ejecuta en paralelo (de forma separada)
 	 
-	 pid_t pid = fork(); /* Si el fork() tiene éxito, devuelve un proceso ID(PID)
-				El proceso padre obtiene el PID del proceso hijo
-				El proceso hijo obtiene 0 */
+	 pid_t pid = fork(); // Si el fork() tiene éxito, devuelve un proceso ID(PID)
+						// El proceso padre obtiene el PID del proceso hijo
+						// El proceso hijo obtiene 0 
 
-	 // Si el fork() falla, devuelve -1. Este bloque se ejecuta si hubo un error
+	 // Si el fork() falla, devuelve -1. El bloque if se ejecuta si hubo un error
 	 // mientras se está intentando crear el proceso hijo
 	 if (pid == 1) {
 		 printf("Error al crear el proceso hijo\n");
@@ -60,4 +60,4 @@
  * El PPID del hijo es el mismo que el PID del padre porque el hijo ha sido creado por el padre.
  * Haciendo que el padre sea su ancestro directo
  *
- * El PPID del padre sera diferente porque se refiere al proceso que ha creado al padre (el shell, terminal) */
+ * El PPID del padre sera diferente porque se refiere al proceso que ha creado al padre (el shell, terminal) 

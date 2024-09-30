@@ -11,23 +11,27 @@ int main() {
     if (pid == -1) {
         // Error al crear el proceso hijo
         perror("fork failed");
+        // Es exit(1) y el valor es 1, por lo que el proceso hijo sale con estado 1
         exit(1);
     }
     
     if (pid == 0) {
         // Proceso hijo
         printf("\tSoy el proceso hijo, mi PID es %d\n", getpid());
+        // Es sleep(1) y el valor es 1, por lo que el hijo se duerme 1 segundo
         sleep(1); // Esperar a que el padre pregunte
-        printf("Estoy bien, gracias por preguntar\n");
+        printf("\tEstoy bien, gracias por preguntar\n");
     } else {
         // Proceso padre
         printf("Soy el proceso padre, mi PID es %d\n", getpid());
         printf("Hola, ¿qué tal?\n");
+        // Es sleep(2) y el valor es 2, por lo que el padre se duerme 2 segundos
         sleep(2); // Esperar la respuesta del hijo
     }
     
     return 0;
 }
+// Sale el printf del padre y luego el del hijo porque el padre se duerme 2 segundos
 
 /* 
 1. Se corrigió el error de formato en la llamada a getpid() en el proceso hijo.

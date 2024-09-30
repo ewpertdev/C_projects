@@ -48,6 +48,7 @@ int main() {
             // Primer hijo de H2 (nivel 2)
             printf("El primer hijo de H2 - PID: %d, PPID: %d, Nivel: 2\n", getpid(), getppid());
             // exit(2) es el estado de salida del primer hijo de H2
+            //
             exit(2);
         } else {
             printf("H2 creó su primer hijo con PID: %d\n", pid3);
