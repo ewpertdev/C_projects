@@ -1,0 +1,17 @@
+  Se ha observado que algunos de los PID y PPIDs son los mismos, es porque el hijo es una copia del padre.
+ 
+  1. El PID del hijo (el printf en el hijo) cuadra con el PID devuelto por el fork() en el padre porque fork() da al padre el PID del hijo
+ 
+  2. El PPID del hijo es el mismo que el PID del padre porque el padre es el que ha creado al hijo
+ 
+  3. El PPID del padre es diferente porque es el PID del proceso que ha creado al padre
+ 
+  En resumen:
+ 
+  El PID del hijo (que sale printeado en el proceso hijo) es el mismo PID devuelto por fork() en el proceso padre.
+  Esto se debe a que fork() devuelve el PID del hijo recién creado al padre.
+ 
+  El PPID del hijo es el mismo que el PID del padre porque el hijo ha sido creado por el padre.
+  Haciendo que el padre sea su ancestro directo
+ 
+  El PPID del padre sera diferente porque se refiere al proceso que ha creado al padre (el shell, terminal) 
