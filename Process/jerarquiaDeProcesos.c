@@ -18,10 +18,12 @@ int main() {
     pid1 = fork();
     if (pid1 == -1) {
         perror("Fork ha fallado");
+        // exit(1) es el estado de salida del proceso padre
         exit(1);
     } else if (pid1 == 0) {
         // Proceso H1 (level 1)
         printf("Proceso H1 - PID: %d, PPID: %d, Nivel: 1\n", getpid(), getppid());
+        // exit(1) es el estado de salida del proceso H1
         exit(1);
     } else {
         printf("Padre creó H1 con PID: %d\n", pid1);
@@ -45,6 +47,7 @@ int main() {
         } else if (pid3 == 0) {
             // Primer hijo de H2 (nivel 2)
             printf("El primer hijo de H2 - PID: %d, PPID: %d, Nivel: 2\n", getpid(), getppid());
+            // exit(2) es el estado de salida del primer hijo de H2
             exit(2);
         } else {
             printf("H2 creó su primer hijo con PID: %d\n", pid3);
@@ -58,6 +61,7 @@ int main() {
         } else if (pid4 == 0) {
             // Segundo hijo de H2 (nivel 2)
             printf("El segundo hijo de H2 - PID: %d, PPID: %d, Nivel: 2\n", getpid(), getppid());
+            // exit(2) es el estado de salida del segundo hijo de H2
             exit(2);
         } else {
             printf("H2 creó su segundo hijo con PID: %d\n", pid4);

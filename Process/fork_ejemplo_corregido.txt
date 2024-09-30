@@ -1,0 +1,12 @@
+1. Se corrigió el error de formato en la llamada a getpid() en el proceso hijo.
+
+2. Se movió el mensaje "Estoy bien, gracias por preguntar" dentro del bloque condicional del proceso hijo.
+
+3. Se implementó la lógica para que el padre pregunte y el hijo responda:
+
+    -El padre imprime su mensaje de saludo antes de la respuesta del hijo.
+    -Se añadieron llamadas a sleep() para sincronizar la salida entre padre e hijo.
+
+4. Se reorganizó el código para mejorar la legibilidad y la lógica del flujo del programa.
+
+Con estos cambios, el programa ahora funciona como se espera: el padre pregunta "¿qué tal?" y el hijo responde "Estoy bien, gracias por preguntar"
